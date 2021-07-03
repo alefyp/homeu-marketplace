@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ferre-marketplace": {
+      "hosting": {
+        "cartApp": [
+          "ferre-marketplace"
+        ]
+      }
+    }
+  }
+}

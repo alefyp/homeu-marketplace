@@ -1,0 +1,23 @@
+<section nz-row nzJustify="center" nzAlign="middle">
+  <div
+    class="al-main-content container"
+    nz-col
+    [nzXs]="{ span: 24 }"
+    [nzMd]="{ span: 20 }"
+    [nzLg]="{ span: 16 }"
+    [nzXl]="{ span: 8 }"
+  >
+    <div class="img-container">
+      <img src="../../../assets/logo.png" alt="Logo de Homeü" />
+    </div>
+    <h1>Todo lo que necesitas para tu hogar a un click de distancia!</h1>
+    <nz-tabset>
+      <nz-tab nzTitle="Crear cuenta">
+        <app-sign-up></app-sign-up>
+      </nz-tab>
+      <nz-tab nzTitle="Iniciar sesión">
+        <app-sign-in></app-sign-in>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+</section>

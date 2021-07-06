@@ -1,0 +1,56 @@
+<form
+  class="signInForm"
+  nz-form
+  [formGroup]="signInForm"
+  (ngSubmit)="submitForm()"
+>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="24" nzRequired>E-mail</nz-form-label>
+    <nz-form-control [nzSpan]="24" nzHasFeedback [nzErrorTip]="emailErrorTpl">
+      <nz-input-group nzPrefixIcon="mail">
+        <input
+          nz-input
+          formControlName="email"
+          placeholder="alejandra@homeu.com"
+          type="email"
+        />
+      </nz-input-group>
+      <ng-template #emailErrorTpl let-control>
+        <ng-container *ngIf="control.hasError('email')">
+          The input is not valid E-mail!
+        </ng-container>
+        <ng-container *ngIf="control.hasError('required')">
+          Please input your E-mail!
+        </ng-container>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="24" nzRequired>Contraseña</nz-form-label>
+    <nz-form-control [nzSpan]="24" nzHasFeedback>
+      <nz-input-group nzPrefixIcon="lock">
+        <input
+          formControlName="password"
+          nz-input
+          type="password"
+          placeholder="*******"
+        />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item nzJustify="center">
+    <nz-form-control>
+      <p *ngIf="signInForm.valid">Perfecto!</p>
+      <button
+        [disabled]="signInForm.invalid"
+        nz-button
+        nzType="primary"
+        type="submit"
+      >
+        Iniciar sesión
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

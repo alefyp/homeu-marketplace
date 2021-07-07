@@ -7,6 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  carouselContent = [
+    {
+      img: 'https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      title: 'Hola',
+      description: 'Cosas lindas'
+    },
+    {
+      img: 'https://images.pexels.com/photos/298842/pexels-photo-298842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      title: 'Hola',
+      description: 'Cosas lindas'
+    },
+    {
+      img: 'https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      title: 'Hola',
+      description: 'Cosas lindas'
+    }]
+
   constructor() { }
 
   ngOnInit(): void {

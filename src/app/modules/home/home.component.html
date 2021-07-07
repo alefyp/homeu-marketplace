@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div nz-row>
+  <div nz-col nzSpan="4" class="home-description">
+    <h1>Homeü</h1>
+    <p>
+      Nos gusta compartir nuestros momentos especiales con amigos. Los momentos
+      que inspiran y deleitan. Momentos como nuevos productos y eventos. Sin
+      olvidar las ocasiones en las que queremos darte un poco más, como un 10%
+      de descuento en tu primer pedido.
+    </p>
+  </div>
+  <nz-carousel nzAutoPlay nz-col nzSpan="20" class="home-carousel">
+    <div nz-carousel-content *ngFor="let content of carouselContent">
+      <img [src]="content.img" alt="" />
+    </div>
+  </nz-carousel>
+</div>

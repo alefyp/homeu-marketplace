@@ -1,0 +1,29 @@
+.logo-container {
+  img {
+    max-height: 64px;
+    &:hover {
+      filter: drop-shadow(1px 1px 6px rgba(223, 223, 223, 0.5));
+    }
+  }
+}
+
+.header-menu {
+  margin-top: -2px;
+}
+
+nz-badge {
+  // padding: 4px 12px;
+  // margin-top: 12px;
+
+  em {
+    padding: 8px;
+    font-size: 24px;
+    margin-top: -8px;
+  }
+}
+
+.header-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

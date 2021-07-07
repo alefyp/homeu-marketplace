@@ -1,6 +1,16 @@
-<nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
-  <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+<nz-card
+  [nzCover]="coverTemplate"
+  [nzActions]="[actionFavorite, actionAddToCart]"
+>
+  <nz-card-meta [nzTitle]="product.name" [nzDescription]="product.description">
+  </nz-card-meta>
 </nz-card>
 <ng-template #coverTemplate>
-  <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+  <img alt="product.name" [src]="product.imageUrl" />
+</ng-template>
+<ng-template #actionFavorite>
+  <em nz-icon nzType="setting"></em>
+</ng-template>
+<ng-template #actionAddToCart>
+  <em nz-icon nzType="edit"></em>
 </ng-template>

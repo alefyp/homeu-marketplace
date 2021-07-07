@@ -6,6 +6,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./modules/home/home.module').then((m) => m.HomeModule),
+    pathMatch: 'full'
   },
   {
     path: 'products',
@@ -13,16 +14,19 @@ const routes: Routes = [
       import('./modules/products/products.module').then(
         (m) => m.ProductsModule
       ),
+    pathMatch: 'full'
   },
   {
     path: 'contact',
     loadChildren: () =>
       import('./modules/contact/contact.module').then((m) => m.ContactModule),
+    pathMatch: 'full'
   },
   {
     path: 'login',
     loadChildren: () =>
       import('./modules/login/login.module').then((m) => m.LoginModule),
+    pathMatch: 'full'
   },
   {
     path: '**',

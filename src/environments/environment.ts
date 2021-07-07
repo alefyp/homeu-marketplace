@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  firebase: {
+    apiKey: "AIzaSyCaAcS6txgHTw62rRY55XpxzvNlPrOBBys",
+    authDomain: "ferre-marketplace.firebaseapp.com",
+    databaseURL: "https://ferre-marketplace-default-rtdb.firebaseio.com",
+    projectId: "ferre-marketplace",
+    storageBucket: "ferre-marketplace.appspot.com",
+    messagingSenderId: "37652651772",
+    appId: "1:37652651772:web:3fd684066cf9e07e084179"
+  }
 };
 
 /*

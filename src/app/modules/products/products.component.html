@@ -1,8 +1,12 @@
-<div nz-row>
-  <div nz-col nzSpan="12">
-    <app-product-card></app-product-card>
-  </div>
-  <div nz-col nzSpan="12">
-    <app-product-card></app-product-card>
+<div class="products-view">
+  <div nz-row [nzGutter]="8" class="products-container">
+    <div
+      nz-col
+      nzSpan="6"
+      class="products-item"
+      *ngFor="let product of products$ | async"
+    >
+      <app-product-card [product]="product"></app-product-card>
+    </div>
   </div>
 </div>

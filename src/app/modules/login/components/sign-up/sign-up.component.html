@@ -42,7 +42,11 @@
 
   <nz-form-item>
     <nz-form-label [nzSpan]="24" nzRequired>Contraseña</nz-form-label>
-    <nz-form-control [nzSpan]="24" nzHasFeedback>
+    <nz-form-control
+      [nzSpan]="24"
+      nzHasFeedback
+      [nzErrorTip]="passwordErrorTpl"
+    >
       <nz-input-group nzPrefixIcon="lock">
         <input
           formControlName="password"
@@ -50,13 +54,20 @@
           type="password"
           placeholder="*******"
         />
+        <ng-template #passwordErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('minlength')">
+            La contraseña debe contener al menos 6 caracteres
+          </ng-container>
+          <ng-container *ngIf="control.hasError('required')">
+            La contraseña es obligatoria
+          </ng-container>
+        </ng-template>
       </nz-input-group>
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-item nzJustify="center">
     <nz-form-control>
-      <p *ngIf="signupForm.valid">Perfecto!</p>
       <button
         [disabled]="signupForm.invalid"
         nz-button

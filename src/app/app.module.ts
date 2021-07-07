@@ -21,10 +21,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* Features */
-import { CoreModule } from './core/core.module';
 import { LoginModule } from './modules/login/login.module';
 import { ProductsModule } from './modules/products/products.module';
 import { ContactModule } from './modules/contact/contact.module';
+
+/* enviroments */
+import { environment } from '@env/environment';
+
+/* firebase */
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { SharedModule } from './shared/shared.module';
+
 
 registerLocaleData(en);
 
@@ -37,13 +45,15 @@ registerLocaleData(en);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CoreModule,
     NzLayoutModule,
     NzGridModule,
     NzTypographyModule,
     LoginModule,
     ProductsModule,
-    ContactModule
+    ContactModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    SharedModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

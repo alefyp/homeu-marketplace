@@ -5,12 +5,13 @@ import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-
+import { NzFormModule } from 'ng-zorro-antd/form';
 
 @NgModule({
   declarations: [LoginComponent, SignUpComponent, SignInComponent],
@@ -22,7 +23,10 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzInputModule,
     ReactiveFormsModule,
     NzButtonModule,
-    FormsModule],
+    FormsModule,
+    NzFormModule
+
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 

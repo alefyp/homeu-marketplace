@@ -1,3 +1,1 @@
-import { formValidationControls } from "./formValidationControls";
-
-export { formValidationControls }
+export * from './formValidationControls';

@@ -1,0 +1,74 @@
+<header nz-row nz-row nzJustify="space-between" nzAlign="middle">
+  <div nz-col class="logo-container">
+    <a routerLink="">
+      <img src="../../../assets/logo.png" alt="Logo de Homeü" />
+    </a>
+  </div>
+
+  <ul nz-menu nzMode="horizontal" nz-col class="header-menu">
+    <li nz-menu-item nzMatchRouter>
+      <a
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Página principal</a
+      >
+    </li>
+    <li nz-menu-item nzMatchRouter>
+      <a
+        routerLink="contact"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Contacto</a
+      >
+    </li>
+    <li nz-menu-item nzMatchRouter>
+      <a
+        routerLink="products"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Productos</a
+      >
+    </li>
+    <li nz-menu-item nzMatchRouter>
+      <a routerLink="help">Ayuda</a>
+    </li>
+  </ul>
+
+  <div nz-col class="header-group">
+    <nz-button-group>
+      <button nz-button (click)="log()">Mi Cuenta</button>
+      <button
+        nz-button
+        nz-dropdown
+        [nzDropdownMenu]="dropMenu"
+        nzPlacement="bottomRight"
+      >
+        <em nz-icon nzType="user"></em>
+      </button>
+    </nz-button-group>
+    <nz-dropdown-menu #dropMenu="nzDropdownMenu">
+      <ul nz-menu>
+        <li nz-menu-item>Iniciar sesión</li>
+        <li nz-menu-item>Crear cuenta</li>
+      </ul>
+    </nz-dropdown-menu>
+
+    <div>
+      <nz-badge
+        [nzCount]="5"
+        [nzOverflowCount]="10"
+        [nzStyle]="{
+          backgroundColor: '#fff',
+          color: '#999',
+          boxShadow: '0 0 0 1px #d9d9d9 inset',
+          margin: '8px 0 0 0'
+        }"
+      >
+        <a class="head-example">
+          <em nz-icon nzType="shopping-cart" nzTheme="outline"></em>
+        </a>
+      </nz-badge>
+    </div>
+  </div>
+</header>

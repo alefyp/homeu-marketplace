@@ -1,10 +1,12 @@
 <nz-card
+  [nzHoverable]="true"
   [nzCover]="coverTemplate"
   [nzActions]="[actionFavorite, actionAddToCart]"
 >
   <nz-card-meta [nzTitle]="product.name" [nzDescription]="product.description">
   </nz-card-meta>
 </nz-card>
+
 <ng-template #coverTemplate>
   <img alt="product.name" [src]="product.imageUrl" />
 </ng-template>

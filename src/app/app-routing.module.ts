@@ -28,6 +28,7 @@ const routes: Routes = [
       import('./modules/login/login.module').then((m) => m.LoginModule),
     pathMatch: 'full'
   },
+  { path: 'cart', loadChildren: () => import('./modules/cart/cart.module').then(m => m.CartModule) },
   {
     path: '**',
     loadChildren: () =>

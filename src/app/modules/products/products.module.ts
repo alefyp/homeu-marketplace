@@ -12,6 +12,8 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     NzCardModule,
     NzIconModule,
     NzSwitchModule,
+    NzButtonModule,
+    NzNotificationModule,
     AngularFirestoreModule
   ]
 })

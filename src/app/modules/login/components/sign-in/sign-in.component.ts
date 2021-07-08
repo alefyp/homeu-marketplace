@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import * as utils from '../../../../shared/utils';
+import { AngularFireAuth } from '@angular/fire/auth'
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -15,7 +17,7 @@ export class SignInComponent implements OnInit {
     return this.signInForm.controls;
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public auth: AngularFireAuth, private router: Router) {
     this.signInForm = this.fb.group({
       email: new FormControl(
         '',
@@ -28,9 +30,18 @@ export class SignInComponent implements OnInit {
   }
 
   submitForm(): void {
-    console.log(this.signInForm.status);
-    console.log(this.signInForm);
     utils.formValidationControls(this.signInForm);
+
+    let email = this.signInForm.value.email;
+    let password = this.signInForm.value.password;
+
+    this.auth.signInWithEmailAndPassword(email, password).then((signInResult) => {
+      console.log('Hello ', signInResult.user);
+
+      this.router.navigate(['/']);
+
+    });
+
   }
 
 

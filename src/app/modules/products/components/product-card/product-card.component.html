@@ -7,12 +7,18 @@
   </nz-card-meta>
 </nz-card>
 
-<ng-template #coverTemplate>
+<ng-template #coverTemplate class="product-img">
   <img alt="product.name" [src]="product.imageUrl" />
 </ng-template>
 <ng-template #actionFavorite>
-  <em nz-icon nzType="setting"></em>
+  <p>{{ product.price | currency }}</p>
 </ng-template>
 <ng-template #actionAddToCart>
-  <em nz-icon nzType="edit"></em>
+  <button
+    nz-button
+    nzType="default"
+    (click)="productAddedNotification(product.name)"
+  >
+    Añadir al carrito
+  </button>
 </ng-template>

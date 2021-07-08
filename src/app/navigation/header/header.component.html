@@ -6,46 +6,40 @@
   </div>
 
   <ul nz-menu nzMode="horizontal" nz-col class="header-menu">
-    <li nz-menu-item nzMatchRouter>
-      <a
-        routerLink=""
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Página principal</a
-      >
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+      <a routerLink="">Página principal</a>
     </li>
-    <li nz-menu-item nzMatchRouter>
-      <a
-        routerLink="contact"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Contacto</a
-      >
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+      <a routerLink="contact">Contacto</a>
     </li>
-    <li nz-menu-item nzMatchRouter>
-      <a
-        routerLink="products"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Productos</a
-      >
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact>
+      <a routerLink="products">Productos</a>
     </li>
-    <li nz-menu-item nzMatchRouter>
+    <li nz-menu-item nzMatchRouter nzMatchRouterExact>
       <a routerLink="help">Ayuda</a>
     </li>
   </ul>
 
   <div nz-col class="header-group">
     <nz-button-group>
-      <button nz-button (click)="log()">Mi Cuenta</button>
-      <button
-        nz-button
-        nz-dropdown
-        [nzDropdownMenu]="dropMenu"
-        nzPlacement="bottomRight"
-      >
-        <em nz-icon nzType="user"></em>
-      </button>
+      <div *ngIf="auth.user | async as user; else showLogin">
+        <span>Hola {{ user.displayName }}!</span>
+        <button nz-button nzPlacement="bottomRight" (click)="logout()">
+          Logout
+        </button>
+      </div>
+
+      <ng-template #showLogin let-user="user">
+        <button nz-button (click)="log()">Mi Cuenta</button>
+        <button
+          nz-button
+          nz-dropdown
+          [nzDropdownMenu]="dropMenu"
+          nzPlacement="bottomRight"
+        >
+          <em nz-icon nzType="user"></em>
+        </button>
+      </ng-template>
     </nz-button-group>
     <nz-dropdown-menu #dropMenu="nzDropdownMenu">
       <ul nz-menu>

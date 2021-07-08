@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AngularFireAuth) { }
 
   ngOnInit(): void {
   }
 
   log() {
     console.log('hareamos algo ')
+  }
+
+  logout() {
+    this.auth.signOut();
   }
 
 }

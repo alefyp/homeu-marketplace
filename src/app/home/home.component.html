@@ -1,5 +1,5 @@
-<div nz-row>
-  <div nz-col nzSpan="4" class="home-description">
+<div nz-row class="home-container">
+  <div nz-col [nzSpan]="4" class="home-description">
     <h1>Homeü</h1>
     <p>
       Nos gusta compartir nuestros momentos especiales con amigos. Los momentos
@@ -8,7 +8,7 @@
       de descuento en tu primer pedido.
     </p>
   </div>
-  <nz-carousel nzAutoPlay nz-col nzSpan="20" class="home-carousel">
+  <nz-carousel nz-col [nzSpan]="20" class="home-carousel" nzAutoPlay>
     <div nz-carousel-content *ngFor="let content of carouselContent">
       <img [src]="content.img" alt="" />
     </div>

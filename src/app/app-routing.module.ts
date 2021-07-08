@@ -1,39 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () =>
-      import('./modules/home/home.module').then((m) => m.HomeModule),
-    pathMatch: 'full'
-  },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   {
     path: 'products',
-    loadChildren: () =>
-      import('./modules/products/products.module').then(
-        (m) => m.ProductsModule
-      ),
-    pathMatch: 'full'
+    component: ProductsComponent,
   },
   {
     path: 'contact',
-    loadChildren: () =>
-      import('./modules/contact/contact.module').then((m) => m.ContactModule),
-    pathMatch: 'full'
+    component: ContactComponent,
   },
   {
     path: 'login',
-    loadChildren: () =>
-      import('./modules/login/login.module').then((m) => m.LoginModule),
-    pathMatch: 'full'
+    component: LoginComponent,
   },
   {
     path: '**',
-    loadChildren: () =>
-      import('./modules/not-found/not-found.module').then(
-        (m) => m.NotFoundModule
-      ),
+    component: NotFoundComponent,
   },
 ];
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import * as utils from '../../../../shared/utils';
+import * as utils from '../../../utils/formValidationControls';
 
 @Component({
   selector: 'app-sign-up',

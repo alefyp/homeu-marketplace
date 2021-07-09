@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AngularFireAuthGuard, hasCustomClaim, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+
+const cartRoute = 'cart';
+
+const redirectLoggedInToHome = () => redirectLoggedInTo(['']);
+const redirectUnauthorizedCartToLogin = () => redirectUnauthorizedTo(`/login?continueTo=${cartRoute}`);
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
       import('./modules/home/home.module').then((m) => m.HomeModule),
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'products',
@@ -26,9 +32,15 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () =>
       import('./modules/login/login.module').then((m) => m.LoginModule),
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToHome }
   },
-  { path: 'cart', loadChildren: () => import('./modules/cart/cart.module').then(m => m.CartModule) },
+  {
+    path: cartRoute,
+    loadChildren: () =>
+      import('./modules/cart/cart.module').then(m => m.CartModule),
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedCartToLogin }
+  },
   {
     path: '**',
     loadChildren: () =>

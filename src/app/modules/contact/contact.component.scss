@@ -1,0 +1,13 @@
+div:first-of-type {
+  display: flex;
+  height: calc(100vh - 134px);
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+nz-card {
+  width: 20%;
+  text-align: center;
+}

@@ -10,10 +10,10 @@
       <a routerLink="">Página principal</a>
     </li>
     <li nz-menu-item nzMatchRouter nzMatchRouterExact>
-      <a routerLink="contact">Contacto</a>
+      <a routerLink="products">Productos</a>
     </li>
     <li nz-menu-item nzMatchRouter nzMatchRouterExact>
-      <a routerLink="products">Productos</a>
+      <a routerLink="contact">Contacto</a>
     </li>
     <li nz-menu-item nzMatchRouter nzMatchRouterExact>
       <a routerLink="help">Ayuda</a>
@@ -24,13 +24,18 @@
     <nz-button-group>
       <div *ngIf="auth.user | async as user; else showLogin">
         <span>Hola {{ user.displayName }}!</span>
-        <button nz-button nzPlacement="bottomRight" (click)="logout()">
+        <nz-divider nzType="vertical"></nz-divider>
+        <button
+          nz-button
+          nzSize="small"
+          nzPlacement="bottomRight"
+          (click)="logout()"
+        >
           Logout
         </button>
       </div>
 
       <ng-template #showLogin let-user="user">
-        <button nz-button (click)="log()">Mi Cuenta</button>
         <button
           nz-button
           nz-dropdown
@@ -48,15 +53,18 @@
       </ul>
     </nz-dropdown-menu>
 
-    <div>
+    <nz-divider nzType="vertical"></nz-divider>
+
+    <div class="red">
       <nz-badge
-        [nzCount]="5"
+        (click)="itemCount > 0 ? openCheckout() : false"
+        [nzCount]="itemCount"
         [nzOverflowCount]="10"
         [nzStyle]="{
           backgroundColor: '#fff',
           color: '#999',
           boxShadow: '0 0 0 1px #d9d9d9 inset',
-          margin: '8px 0 0 0'
+          margin: '12px 0 0 0'
         }"
       >
         <a class="head-example">

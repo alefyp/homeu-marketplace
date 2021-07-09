@@ -6,6 +6,8 @@ import { LoginComponent } from './login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 
+import { StoreModule } from '@ngrx/store';
+
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzGridModule } from 'ng-zorro-antd/grid';

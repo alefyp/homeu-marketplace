@@ -1,20 +1,17 @@
-# Homeü
+# Homeü 🏠
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+HomeU is a marketplace specialized in providing a total wellness experience through home products.
 
-## Development server
+## General considerations
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Design: The application is currently only designed for web version.
+Backend: I am using firebase as a backend service, serverless. NoSQL database.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-### Stack
+## Stack
 
 Angular v11.2.0 | SCSS | NgZorro v11.2.0 | NgRx | Firebase
 
-### Requirements
+## Requirements
 
 - [x] Products: id, name, description, sku, imagenUrl.
 - [x] Checkout: quantity, price, total | summary

@@ -1,1 +1,51 @@
-<p>cart works!</p>
+<div nz-row class="cart">
+  <nz-page-header nzTitle="Checkout"></nz-page-header>
+</div>
+
+<div nz-row class="cart">
+  <nz-steps nz-col [nzSpan]="5" [nzCurrent]="0" nzDirection="vertical">
+    <nz-step
+      nzTitle="Confirmar orden"
+      nzDescription="Edita los productos de tu orden de compra."
+    ></nz-step>
+    <nz-step
+      nzTitle="Datos de  entrega"
+      nzDescription="Completa la información necesaria para la entrega a domicilio."
+    ></nz-step>
+    <nz-step
+      nzTitle="Pago en línea"
+      nzDescription="Configura el método de pago."
+    ></nz-step>
+  </nz-steps>
+  <nz-table #basicTable [nzData]="tableOrder" nz-col [nzSpan]="18" nzOffset="1">
+    <thead>
+      <tr>
+        <th scope="col">Producto</th>
+        <th scope="col">Sku</th>
+        <th scope="col">Precio unitario</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Total</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of basicTable.data">
+        <td>{{ product.name }}</td>
+        <td>{{ product.sku }}</td>
+        <td>{{ product.price | currency }}</td>
+        <td>
+          {{ product.quantity }}
+          <nz-divider nzType="vertical"></nz-divider>
+          <i nz-icon nzType="plus" nzTheme="outline"></i>
+          <nz-divider nzType="vertical"></nz-divider>
+          <i nz-icon nzType="minus" nzTheme="outline"></i>
+        </td>
+        <td>{{ product.quantity * product.price | currency }}</td>
+        <td>
+          <nz-divider nzType="vertical"></nz-divider>
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

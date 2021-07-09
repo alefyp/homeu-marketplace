@@ -14,11 +14,7 @@
   <p>{{ product.price | currency }}</p>
 </ng-template>
 <ng-template #actionAddToCart>
-  <button
-    nz-button
-    nzType="default"
-    (click)="productAddedNotification(product.name)"
-  >
+  <button nz-button nzType="default" (click)="addItem(product)">
     Añadir al carrito
   </button>
 </ng-template>
